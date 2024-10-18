@@ -30,3 +30,53 @@
 *.exe
 *.out
 *.app
+
+# Build 결과물 및 임시 파일
+*.pdb
+*.ilk
+*.idb
+*.log
+*.tlog
+*.lastbuildstate
+*.sdf
+*.suo
+*.ipch
+*.opensdf
+*.vcxproj.user
+
+# 빌드 아티팩트
+Debug/
+Release/
+x64/
+*.exp
+
+# Visual Studio 파일
+.vscode/
+.vs/
+*.vcxproj.*
+*.vcproj.*
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# CMake 빌드 파일
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# 기타
+*.tmp
+*.bak
