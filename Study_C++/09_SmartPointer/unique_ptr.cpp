@@ -2,7 +2,7 @@
 #include <memory> // unique_ptr 사용
 using namespace std;
 
-int unique_test1()
+int unique_test1() // 기본적인 unique_ptr 사용법
 {
     cout << "unique_test1 실행\n";
     // unique_ptr 생성
@@ -12,7 +12,7 @@ int unique_test1()
     cout << "ptr1의 값: " << *ptr1 << endl;
 
     // unique_ptr은 복사가 불가능
-    //unique_ptr<int> ptr2 = ptr1; // 컴파일 에러 발생!
+    //unique_ptr<int> ptr2 = ptr1; // 컴파일 에러 발생! -> 유니크 포인터는 레퍼런스 카운터가 단 1개
 
     cout << "unique_test1 종료\n";
 
@@ -20,7 +20,7 @@ int unique_test1()
     return 0;
 }
 
-int unique_test2()
+int unique_test2() // move로 unique_ptr 소유권 이전
 {
     cout << "unique_test2 실행\n";
     // unique_ptr 생성
