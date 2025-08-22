@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	CArr<int> myvector;
-
+	// 연습용 주석
 	myvector.Push_Back(1);
 	myvector.Push_Back(2);
 	myvector.Push_Back(3);
