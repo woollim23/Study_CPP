@@ -40,7 +40,7 @@ int main()
 	cout << "백제 중심지 : ";
 	baekjae::CentralArea();
 	cout << "백제 멸망 연도 : ";
-	cout << baekjae::year << endl;
+	cout << baekjae::year << endl; // 변수 이름이 같아도, 스코프 설정 연산자 앞에 있는 네임스페이스에 따라 달라진다.
 
 	return 0;
 }
