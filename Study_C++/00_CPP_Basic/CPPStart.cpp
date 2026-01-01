@@ -2,12 +2,12 @@
 #include <vector>
 using namespace std;
 
-void Minus(const int x, const int y)
+void Minus(const int x, const int y) // 함수 학습 - 함수
 {
 	cout << "x - y = " << x - y << endl;
 }
 
-namespace silla
+namespace silla // 네임스페이스 학습 - 네임스페이스
 {
 	int year = 935;
 
@@ -17,7 +17,7 @@ namespace silla
 	}
 }
 
-namespace baekjae
+namespace baekjae // 네임스페이스 학습 - 네임스페이스
 {
 	int year = 660;
 
@@ -25,6 +25,20 @@ namespace baekjae
 	{
 		cout << "충청도" << endl;
 	}
+}
+
+int x = 10; // 스코핑룰 학습 - 변수
+
+int Func1() // 스코핑룰 학습 - 함수
+{
+	int y = x + 10;
+	return y;
+}
+
+int Func2() // 스코핑룰 학습 - 함수
+{
+	int x = 100;
+	return x;
 }
 
 int main()
@@ -57,5 +71,14 @@ int main()
 	{
 		cout << "벡터 값 : " << exam.at(i) << endl;
 	}
+
+	/* 스코핑룰 이해하기 ({}) */
+	// 어떤 변수든 변수가 유효한 공간이 존재 -> scope
+	// 유효범위를 제한하여 사용하는 것을 스코핑룰이라고도 부름
+	cout << endl;
+	cout << "y = " << Func1() << endl;
+	cout << "x = " << Func2() << endl;
+	cout << "x = " << x << endl;
+
 	return 0;
 }
