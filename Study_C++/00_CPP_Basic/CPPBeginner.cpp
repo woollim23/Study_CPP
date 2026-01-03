@@ -30,5 +30,20 @@ int main()
 	cout << "4.4 / 2 = (int) " << j << endl;
 	cout << "4.4 / 2 = " << k << endl;
 
+	/* 명시적 변환 이해하기 */
+	number1 = 65;
+	number2 = 23.4;
+
+	int number3 = int(number2);
+	double number4 = double(number1 / number2);
+
+	char ch = char(number1);
+
+	cout << endl;
+	cout << "number1 : " << number1 << endl;
+	cout << "number2 : " << number2 << endl;
+	cout << "number3 : " << number3 << endl;
+	cout << "number4 : " << number4 << endl;
+
 	return 0;
 }
