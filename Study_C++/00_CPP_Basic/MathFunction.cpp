@@ -41,14 +41,15 @@ int main()
 	/* 몫과 나머지 구하기(%) */
 	cout << endl << "== 몫과 나머지 구하기 ==" << endl;
 	double x = 5.7;
-	int div1 = static_cast<int>(x / 5);
-	double mod1 = x - 5 * static_cast<int>(x / 5);
+	int div1 = static_cast<int>(x / 5); // 몫
+	double mod1 = x - 5 * static_cast<int>(x / 5); // 나머지 : 피제수 - (제수 * 몫)
 
 	int y = 10;
 	int div2 = static_cast<int>(y / 2);
 	double mod2 = y % 2;
 
-	cout << "5.7 / 5 = 몫 : " << div1 << "";
+	cout << "5.7 / 5 = 몫 : " << div1 << ", 나머지 : " << mod1 << endl;
+	cout << "10 / 2 = 몫 : " << div2 << ", 나머지 : " << mod2 << endl;
 
 	return 0;
 }
