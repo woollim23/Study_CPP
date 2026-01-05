@@ -51,5 +51,12 @@ int main()
 	cout << "5.7 / 5 = ¸ò : " << div1 << ", ³ª¸ÓÁö : " << mod1 << endl;
 	cout << "10 / 2 = ¸ò : " << div2 << ", ³ª¸ÓÁö : " << mod2 << endl;
 
+	/* Á¦°ö±Ù ±¸ÇÏ±â (sqrt) */
+	cout << endl << "== Á¦°ö±Ù ±¸ÇÏ±â ==" << endl;
+	cout << "4ÀÇ Á¦°ö±Ù : " << sqrt(4.0) << endl;
+	cout << "16ÀÇ Á¦°ö±Ù : " << sqrt(16.0) << endl;
+	cout << "64ÀÇ Á¦°ö±Ù : " << sqrt(64.0) << endl;
+	cout << "256ÀÇ Á¦°ö±Ù : " << sqrt(256.0) << endl;
+
 	return 0;
 }
