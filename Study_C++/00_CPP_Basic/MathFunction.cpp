@@ -58,5 +58,15 @@ int main()
 	cout << "64의 제곱근 : " << sqrt(64.0) << endl;
 	cout << "256의 제곱근 : " << sqrt(256.0) << endl;
 
+	/* 소수점 분리하기 (modf) */
+	cout << endl << "== 소수점 분리하기 ==" << endl;
+	x = 1.2345;
+	double div = 0.0;
+	double mod = 0.0;
+
+	mod = modf(x, &div);
+
+	cout << "1.2345의 몫 : " << div << ", 나머지 : " << mod << endl;
+
 	return 0;
 }
