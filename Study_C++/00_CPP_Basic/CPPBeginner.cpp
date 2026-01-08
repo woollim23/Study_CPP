@@ -10,6 +10,7 @@ class Temp { // 자료형의 크기 이해하기(sizeof) - 클래스
 int main()
 {
 	/* 포인터 이해하기(*) */
+	cout << "== 포인터 이해하기(*) ==" << endl;
 	int number1 = 10;
 	int* pointer1 = &number1;
 
@@ -31,7 +32,7 @@ int main()
 	int j = (int)y / x;
 	double k = y / x;
 
-	cout << endl;
+	cout << endl << "== 캐스트 연산자 이해하기 ==" << endl;
 	cout << "4.4 / 2 = (static_cast<int>) " << i << endl;
 	cout << "4.4 / 2 = (int) " << j << endl;
 	cout << "4.4 / 2 = " << k << endl;
@@ -45,14 +46,14 @@ int main()
 
 	char ch = char(number1);
 
-	cout << endl;
+	cout << endl << "== 명시적 변환 이해하기 ==" << endl;
 	cout << "number1 : " << number1 << endl;
 	cout << "number2 : " << number2 << endl;
 	cout << "number3 : " << number3 << endl;
 	cout << "number4 : " << number4 << endl;
 
 	/* 자료형의 크기 이해하기(sizeof) */
-	cout << endl;
+	cout << endl << "== 자료형의 크기 이해하기(sizeof) ==" << endl;
 	cout << "char 크기 : " << sizeof('p') << endl;
 	cout << "int 크기 : " << sizeof(10) << endl;
 	cout << "double 크기 : " << sizeof(10.0) << endl;
