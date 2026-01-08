@@ -77,6 +77,5 @@ int main()
 	{
 		cout << "³­¼ö : " << rand() << endl;
 	}
-
 	return 0;
 }

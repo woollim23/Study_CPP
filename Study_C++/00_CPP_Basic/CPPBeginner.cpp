@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 class Temp { // 자료형의 크기 이해하기(sizeof) - 클래스
@@ -56,6 +57,19 @@ int main()
 	cout << "int 크기 : " << sizeof(10) << endl;
 	cout << "double 크기 : " << sizeof(10.0) << endl;
 	cout << "클래스 크기 : " << sizeof(Temp) << endl;
+
+
+	/* 정수와 문자의 최대/최소값 */
+	auto result1 = min(1, 5);
+	auto result2 = min('a', 'z');
+	cout << endl << "== 정수와 문자의 최대/최소값 ==" << endl;
+	cout << result1 << ", " << result2 << endl;
+
+	auto result3 = minmax({ 'a','n','z' });
+	auto result4 = minmax({ 1, 2, 3 });
+
+	cout << result3.first << ", " << result3.second << endl;
+	cout << result4.first << ", " << result4.second << endl;
 
 	return 0;
 }
