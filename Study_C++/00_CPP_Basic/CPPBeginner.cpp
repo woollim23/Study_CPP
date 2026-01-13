@@ -72,5 +72,16 @@ int main()
 	cout << result3.first << ", " << result3.second << endl;
 	cout << result4.first << ", " << result4.second << endl;
 
+
+	/* 포인터 */
+
+	int a = 10;
+	int* p = &a;
+	cout << endl << "== 포인터 ==" << endl;
+	cout << "변수 a의 값: " << a << endl;
+	cout << "변수 a의 주소: " << &a << endl;
+	cout << "포인터 p가 가리키는 값: " << *p << endl;
+	cout << "포인터 p 자체의 주소: " << &p << endl;
+
 	return 0;
 }
