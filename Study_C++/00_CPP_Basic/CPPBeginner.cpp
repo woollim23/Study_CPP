@@ -19,6 +19,18 @@ int PointerFunc(vector<string>* info) // 포인터 변수 사용하기
 		return sizeof(info);
 }
 
+int Temp1(const int arg) // 지역 변수 이해하기
+{
+	int number = 20;
+	return number + 1;
+}
+
+int Temp2(const int arg) // 지역 변수 이해하기
+{
+	int number = arg;
+	return number + 1;
+}
+
 int main()
 {
 	/* 캐스트 연산자 이해하기 */
@@ -129,5 +141,17 @@ int main()
 	{
 		cout << "Pointer6[" << i << "] = " << *(pointer6 + i) << endl;
 	}
+
+
+	/* 지역 변수 이해하기 */
+	int number = 10;
+
+	int rtn1 = Temp1(number);
+	int rtn2 = Temp2(number);
+
+	cout << endl << "== 지역 변수 이해하기 ==" << endl;
+	cout << "메인 함수 number : " << number << endl;
+	cout << "Temp1 함수 number : " << rtn1 << endl;
+	cout << "Temp2 함수 number : " << rtn2 << endl;
 	return 0;
 }
