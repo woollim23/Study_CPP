@@ -106,5 +106,28 @@ int main()
 	cout << "포인터 인자 크기 : " << PointerFunc(&message) << endl;
 	cout << "원래 변수 크기 : " << sizeof(message) << endl;
 
+	
+	/* 포인터 배열 사용하기 */
+	const int kSize = 3;
+
+	int numbers[kSize] = { 10,20,30 };
+	pointer1 = numbers;
+
+	int no1 = 1;
+	int no2 = 2;
+	int no3 = 3;
+	int* pointer6[kSize] = { &no1,&no2, &no3 };
+
+	cout << endl << "== 포인터 배열 사용하기 ==" << endl;
+
+	for (int i = 0; i < kSize; i++)
+	{
+		cout << "Pointer1[" << i << "] = " << *(pointer1 + i) << endl;
+	}
+
+	for (int i = 0; i < kSize; i++)
+	{
+		cout << "Pointer6[" << i << "] = " << *(pointer6 + i) << endl;
+	}
 	return 0;
 }
