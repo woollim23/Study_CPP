@@ -31,6 +31,18 @@ int Temp2(const int arg) // 지역 변수 이해하기
 	return number + 1;
 }
 
+extern int g_number = 100; // 전역 변수 이해하기
+
+int Func1() // 전역 변수 이해하기
+{
+	return g_number++;
+}
+
+int Func2() // 전역 변수 이해하기
+{
+	return g_number++;
+}
+
 int main()
 {
 	/* 캐스트 연산자 이해하기 */
@@ -153,5 +165,15 @@ int main()
 	cout << "메인 함수 number : " << number << endl;
 	cout << "Temp1 함수 number : " << rtn1 << endl;
 	cout << "Temp2 함수 number : " << rtn2 << endl;
+
+
+	/* 전역 변수 이해하기 */
+
+	number = g_number++;
+
+	cout << endl << "== 전역 변수 이해하기 ==" << endl;
+	cout << "메인 number : " << number << endl;
+	cout << "Func1 number : " << Func1() << endl;
+	cout << "Func2 number : " << Func2() << endl;
 	return 0;
 }
