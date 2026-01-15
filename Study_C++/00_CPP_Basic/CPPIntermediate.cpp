@@ -24,6 +24,16 @@ void Func2(string& info)
 	info += "981년";
 }
 
+void Func3(bool *is_on)
+{
+	cout << "Call by address : " << sizeof(is_on) << endl;
+}
+
+void Func4(bool& is_on)
+{
+	cout << "Call by reference : " << sizeof(is_on) << endl;
+}
+
 int main()
 {
 	/* Call by Value 이해하기 */
@@ -42,6 +52,15 @@ int main()
 	string king_info = "고려 성종 즉위년 : ";
 	Func2(king_info);
 	cout << king_info << endl;
+
+
+	/* Call by Address 이해하기 */
+	bool is_tmp = true;
+
+	cout << endl << "== Call by Address 이해하기 ==" << endl;
+	Func3(&is_tmp);
+	Func4(is_tmp);
+
 
 	return 0;
 }
