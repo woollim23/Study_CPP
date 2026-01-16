@@ -62,5 +62,14 @@ int main()
 	Func4(is_tmp);
 
 
+	/* const 변수 이해하기 */
+	const string kMyJob = "developer";
+	string question = "who are you : ";
+	string answer = "my job is : ";
+
+	cout << endl << "== const 변수 이해하기 ==" << endl;
+	cout << question << kMyJob << endl;
+	cout << answer << kMyJob << endl;
+
 	return 0;
 }
