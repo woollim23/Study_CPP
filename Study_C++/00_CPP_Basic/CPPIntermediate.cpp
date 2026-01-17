@@ -34,6 +34,14 @@ void Func4(bool& is_on)
 	cout << "Call by reference : " << sizeof(is_on) << endl;
 }
 
+enum Status // enum 이해하기
+{
+	normal = 0,
+	abnormal,
+	disconnect = 100,
+	close
+};
+
 int main()
 {
 	/* Call by Value 이해하기 */
@@ -84,6 +92,21 @@ int main()
 	int* const ptr2 = &number1;
 	*ptr2 = number2; // 값 변경 가능
 	//*ptr2 = &number2; // 대상 변경은 불가
+
+
+	/* enum 이해하기 */
+	Status number = close;
+
+	cout << endl << "== enum 이해하기 ==" << endl;
+
+	if (number == Status::normal)
+		cout << "Status : normal" << endl;
+	else if(number == abnormal)
+		cout << "Status : abnormal" << endl;
+	else if(number == 101)
+		cout << "Status : disconnect" << endl;
+	else
+		cout << "Status : close" << endl;
 
 	return 0;
 }
