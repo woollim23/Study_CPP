@@ -42,6 +42,14 @@ enum Status // enum 이해하기
 	close
 };
 
+enum class MachineStatus : char
+{
+	normal = 'n',
+	abnormal,
+	disconnect = 100,
+	close
+};
+
 int main()
 {
 	/* Call by Value 이해하기 */
@@ -107,6 +115,23 @@ int main()
 		cout << "Status : disconnect" << endl;
 	else
 		cout << "Status : close" << endl;
+
+	
+	/* enum class 이해하기 */
+	MachineStatus machine = MachineStatus::abnormal;
+
+	cout << endl << "== enum class 이해하기 ==" << endl;
+
+	if(machine == MachineStatus::normal)
+		cout << "Status : normal" << endl;
+	else if (machine == MachineStatus::abnormal)
+		cout << "Status : abnormal" << endl;
+	else if (machine == MachineStatus::disconnect)
+		cout << "Status : disconnect" << endl;
+	else
+		cout << "Status : close" << endl;
+
+	cout << "machine : " << static_cast<int>(machine) << ", " << static_cast<char>(machine) << endl;
 
 	return 0;
 }
