@@ -42,13 +42,29 @@ enum Status // enum 이해하기
 	close
 };
 
-enum class MachineStatus : char
+enum class MachineStatus : char // enum class 이해하기
 {
 	normal = 'n',
 	abnormal,
 	disconnect = 100,
 	close
 };
+
+void Print1(int* arr) // 1차원 배열 함수 인자 사용하기
+{
+	cout << "== Print1 ==" << endl;
+	cout << arr[0] << ", " << arr[1] << ", " << arr[2] << endl;
+
+	arr[1] = 1000;
+}
+
+void Print2(int arr[]) // 1차원 배열 함수 인자 사용하기
+{
+	cout << "== Print2 ==" << endl;
+	cout << arr[0] << ", " << arr[1] << ", " << arr[2] << endl;
+
+	arr[2] = 2000;
+}
 
 int main()
 {
@@ -144,6 +160,17 @@ int main()
 	cout << "== data1 ==" << endl;
 	for (int i = 0; i < 3; i++)
 		cout << "data1[" << i << "] = " << data1[i] << endl;
+
+
+	/* 1차원 배열 함수 인자 사용하기 */
+	cout << endl << "== 1차원 배열 함수 인자 사용하기 ==" << endl;
+
+	int data[3] = { 0,1,2 };
+	Print1(data);
+	Print2(data);
+
+	cout << "== 결과 ==" << endl;
+	cout << data[0] << ", " << data[1] << ", " << data[2] << endl;
 
 	return 0;
 }
