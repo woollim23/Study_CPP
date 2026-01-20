@@ -66,6 +66,21 @@ void Print2(int arr[]) // 1차원 배열 함수 인자 사용하기
 	arr[2] = 2000;
 }
 
+void Func5(int arr[2][2]) // 2차원 배열 함수 인자 사용하기
+{
+	arr[0][0] = 1000;
+}
+
+void Func6(int arr[][2], int row) // 2차원 배열 함수 인자 사용하기
+{
+	arr[row - 2][1] = 2000;
+}
+
+void Func7(int* arr, int row, int col)
+{
+	*((arr + row - 1) + col - 1) = 3000;
+}
+
 int main()
 {
 	/* Call by Value 이해하기 */
@@ -171,6 +186,24 @@ int main()
 
 	cout << "== 결과 ==" << endl;
 	cout << data[0] << ", " << data[1] << ", " << data[2] << endl;
+
+
+	/* 2차원 배열 함수 인자 사용하기 */
+	int data2[2][2]{ {1,2},{3,4} };
+
+	Func5(data2);
+	Func6(data2, 2);
+	Func7(*data2, 2, 2);
+
+	cout << endl << "== 2차원 배열 함수 인자 사용하기 ==" << endl;
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			cout << data2[i][j] << endl;
+		}
+	}
 
 	return 0;
 }
