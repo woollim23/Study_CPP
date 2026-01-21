@@ -205,5 +205,25 @@ int main()
 		}
 	}
 
+
+	/* 배열 일부 변경하기(fill) */
+	int data3[10]{ 0, };
+	fill(data3, data3 + 3, 10);
+	fill(data3 + 4, data3 + 8, 20);
+
+	cout << endl << "== 배열 일부 변경하기(fill) ==" << endl;
+	cout << "== data3 결과 ==" << endl;
+
+	for (int i = 0; i < 10; i++)
+		cout << data3[i] << ", ";
+
+	vector<int> data4({ 0,1,2,3,4,5,6,7 });
+	fill(data4.begin(), data4.begin() + 3, 30);
+
+	cout << endl << endl << "== data4 결과 ==" << endl;
+
+	for (int i = 0, size = data4.size(); i < size; i++)
+		cout << data4.at(i) << ", ";
+
 	return 0;
 }
