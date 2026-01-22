@@ -81,6 +81,10 @@ void Func7(int* arr, int row, int col)
 	*((arr + row - 1) + col - 1) = 3000;
 }
 
+typedef int (*ArithmeticFunc)(int, int); // 함수 포인터 이해하기
+
+int add(int a, int b) { return a + b; } // 함수 포인터 이해하기
+
 int main()
 {
 	/* Call by Value 이해하기 */
@@ -224,6 +228,12 @@ int main()
 
 	for (int i = 0, size = data4.size(); i < size; i++)
 		cout << data4.at(i) << ", ";
+
+	/* 함수 포인터 이해하기 */
+
+	ArithmeticFunc op = add;
+	cout << endl << "== 함수 포인터 이해하기 ==" << endl;
+	std::cout << "더하기: " << op(10, 20) << std::endl;
 
 	return 0;
 }
