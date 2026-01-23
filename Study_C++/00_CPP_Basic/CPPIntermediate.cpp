@@ -81,9 +81,12 @@ void Func7(int* arr, int row, int col)
 	*((arr + row - 1) + col - 1) = 3000;
 }
 
-typedef int (*ArithmeticFunc)(int, int); // 함수 포인터 이해하기
+using ArithmeticFunc = int (*)(int, int); // 함수 포인터 이해하기
 
 int add(int a, int b) { return a + b; } // 함수 포인터 이해하기
+
+template <typename T>
+using Matrix = std::vector<std::vector<T>>; // 함수 포인터 이해하기
 
 int main()
 {
@@ -235,5 +238,10 @@ int main()
 	cout << endl << "== 함수 포인터 이해하기 ==" << endl;
 	std::cout << "더하기: " << op(10, 20) << std::endl;
 
+	/* 함수 포인터 이해하기 (일반 버전) */
+	int (*fp)(int, int) = add;
+	cout << endl << "== 함수 포인터 이해하기 (일반 버전) ==" << endl;
+	cout << "fp(3, 4) : " << fp(3, 4) << endl;
+	cout << "(*fp)(3, 4) : " << (*fp)(3, 4) << endl;
 	return 0;
 }
