@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <functional>
 
 using namespace std;
 
@@ -87,6 +88,10 @@ int add(int a, int b) { return a + b; } // 함수 포인터 이해하기
 
 template <typename T>
 using Matrix = std::vector<std::vector<T>>; // 함수 포인터 이해하기
+
+struct Multiplier { // std::function 이해하기
+	int operator()(int a, int b) { return a * b; }
+};
 
 int main()
 {
@@ -243,5 +248,17 @@ int main()
 	cout << endl << "== 함수 포인터 이해하기 (일반 버전) ==" << endl;
 	cout << "fp(3, 4) : " << fp(3, 4) << endl;
 	cout << "(*fp)(3, 4) : " << (*fp)(3, 4) << endl;
+
+	/* std::function 이해하기 */
+	cout << endl << "== std::function 이해하기 ==" << endl;
+	std::function<int(int, int)> func;
+	func = add;
+	std::cout << "일반 함수: " << func(10, 5) << std::endl;
+
+	func = [](int a, int b) { return a - b; };
+	std::cout << "람다 식: " << func(10, 5) << std::endl;
+
+	func = Multiplier();
+	std::cout << "함수 객체: " << func(10, 5) << std::endl;
 	return 0;
 }
