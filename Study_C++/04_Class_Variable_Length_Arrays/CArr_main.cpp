@@ -23,9 +23,9 @@ int main()
 	myiter++;
 	myiter++;
 
-	cout << *(myiter--) << " ";
-
-	cout << *(--myiter) << " ";
+	cout << *(myiter--) << " "; // 후위 연산자
+	
+	cout << *(--myiter) << " "; // 전위 연산자
 
 	return 0;
 }
