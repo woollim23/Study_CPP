@@ -93,6 +93,21 @@ struct Multiplier { // std::function 이해하기
 	int operator()(int a, int b) { return a * b; }
 };
 
+
+class Person // 클래스 기초 이해하기 
+{
+public:
+	// 멤버 변수
+	string name;
+	int age;
+
+	// 멤버 함수
+	void introduce()
+	{
+		cout << "My name is " << name << " and I am " << age << " years old." << endl;
+	}
+};
+
 int main()
 {
 	/* Call by Value 이해하기 */
@@ -260,5 +275,15 @@ int main()
 
 	func = Multiplier();
 	std::cout << "함수 객체: " << func(10, 5) << std::endl;
+	return 0;
+
+	/* 클래스 기초 이해하기 */
+	cout << endl << "== 클래스 기초 이해하기 ==" << endl;
+	// 객체 생성 (정적 할당)
+	Person p1;
+	p1.name = "Alice";
+	p1.age = 25;
+	p1.introduce();
+
 	return 0;
 }
