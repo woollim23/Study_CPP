@@ -101,6 +101,11 @@ public:
 	string name;
 	int age;
 
+	// 멤버 초기화 리스트 사용 (권장 방식)
+	Person(string n, int a) : name(n), age(a) {
+		cout << "Constructor called" << endl;
+	}
+
 	// 멤버 함수
 	void introduce()
 	{
@@ -280,9 +285,7 @@ int main()
 	/* 클래스 기초 이해하기 */
 	cout << endl << "== 클래스 기초 이해하기 ==" << endl;
 	// 객체 생성 (정적 할당)
-	Person p1;
-	p1.name = "Alice";
-	p1.age = 25;
+	Person p1("Alice", 25);
 	p1.introduce();
 
 	return 0;
