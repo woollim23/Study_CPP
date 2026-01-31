@@ -111,6 +111,10 @@ public:
 	{
 		cout << "My name is " << name << " and I am " << age << " years old." << endl;
 	}
+
+	~Person() {
+		cout << "소멸됨" << endl;
+	}
 };
 
 int main()
@@ -285,8 +289,9 @@ int main()
 	/* 클래스 기초 이해하기 */
 	cout << endl << "== 클래스 기초 이해하기 ==" << endl;
 	// 객체 생성 (정적 할당)
-	Person p1("Alice", 25);
-	p1.introduce();
+	Person *p1 = new Person("Alice", 25);
+	p1->introduce();
 
+	delete p1;
 	return 0;
 }
