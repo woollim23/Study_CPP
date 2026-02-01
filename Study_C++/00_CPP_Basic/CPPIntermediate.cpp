@@ -117,6 +117,17 @@ public:
 	}
 };
 
+class Animal { // 클래스 포인트 이해하기
+public:
+	virtual void Sound() { std::cout << "소리를 냅니다." << std::endl; }
+	virtual ~Animal() {} // 가상 소멸자는 필수!
+};
+
+class Dog : public Animal { // 클래스 포인트 이해하기
+public:
+	void Sound() override { std::cout << "멍멍!" << std::endl; }
+};
+
 int main()
 {
 	/* Call by Value 이해하기 */
@@ -284,8 +295,7 @@ int main()
 
 	func = Multiplier();
 	std::cout << "함수 객체: " << func(10, 5) << std::endl;
-	return 0;
-
+	
 	/* 클래스 기초 이해하기 */
 	cout << endl << "== 클래스 기초 이해하기 ==" << endl;
 	// 객체 생성 (정적 할당)
@@ -293,5 +303,16 @@ int main()
 	p1->introduce();
 
 	delete p1;
+
+
+	/* 클래스 포인트 가상함수 이해하기 */
+	cout << endl << "== 클래스 포인트 가상함수 이해하기 ==" << endl;
+	// 부모 타입 포인터로 자식 객체 참조
+	Animal* myPet = new Dog();
+
+	// virtual 덕분에 Dog의 Sound가 호출됨
+	myPet->Sound();
+
+	delete myPet;
 	return 0;
 }
