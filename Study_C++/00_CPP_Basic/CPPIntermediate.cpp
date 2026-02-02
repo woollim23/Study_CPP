@@ -128,6 +128,13 @@ public:
 	void Sound() override { std::cout << "¸Û¸Û!" << std::endl; }
 };
 
+class Example {
+public:
+	int x;
+	int y;
+	Example(int a) : x(a), y(x + 10) {}
+};
+
 int main()
 {
 	/* Call by Value ÀÌÇØÇÏ±â */
