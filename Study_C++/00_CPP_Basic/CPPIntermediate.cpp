@@ -128,11 +128,17 @@ public:
 	void Sound() override { std::cout << "¸Û¸Û!" << std::endl; }
 };
 
-class Example {
+class Example
+{
 public:
-	int x;
-	int y;
-	Example(int a) : x(a), y(x + 10) {}
+	static int StaticValue;
+	int NormalValue;
+
+	static void Func()
+	{
+		StaticValue = 10;   // ?
+		// NormalValue = 5; // ? ÄÄÆÄÀÏ ¿¡·¯
+	}
 };
 
 int main()
