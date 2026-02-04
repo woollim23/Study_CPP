@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 // ====== 구조체를 함수 인자로 사용하기 ======
@@ -46,6 +47,18 @@ struct Data4
 	int number;
 }data4;
 
+// ====== 구조체 초기화하는 방법3 ======
+struct Info
+{
+	string country;
+
+	struct Who
+	{
+		string name;
+		string nickname;
+	}who;
+};
+
 // =======================================================================================================
 
 int main()
@@ -71,6 +84,14 @@ int main()
 
 	cout << "Data3 number : " << data3.number << endl;
 	cout << "Data4 number : " << data4.number << endl;
+
+	// ====== 구조체 초기화하는 방법3 ======
+	cout << endl << "======구조체 초기화하는 방법3======" << endl;
+	Info chuck = { "고려", {"장군 척준경", "소드마스터"} };
+	Info anjang = { "고구려", {"안장왕 고흥안", "한주 사랑"} };
+
+	cout << chuck.country << ", " << chuck.who.name << ", " << chuck.who.nickname << endl;
+	cout << anjang.country << ", " << anjang.who.name << ", " << anjang.who.nickname << endl;
 
 	return 0;
 }
