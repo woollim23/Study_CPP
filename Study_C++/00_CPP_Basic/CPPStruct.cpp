@@ -34,6 +34,18 @@ struct Data2
 	int number;
 }data2;
 
+// ====== 구조체 초기화하는 방법2 ======
+struct Data3
+{
+	int number;
+};
+
+struct Data4
+{
+	Data3 data3;
+	int number;
+}data4;
+
 // =======================================================================================================
 
 int main()
@@ -51,6 +63,14 @@ int main()
 	Data1 data1(2);
 	cout << "Data1 number : " << data1.number << endl;
 	cout << "Data2 number : " << data2.number << endl;
+
+	// ====== 구조체 초기화하는 방법2 ======
+	cout << endl << "======구조체 초기화하는 방법2======" << endl;
+	Data3 data3 = {}; // 내부 변수를 모두 초기화 함
+	Data4 data4{ data3, 10 }; // 변수 선언된 순서로 인자 전달하여 초기화
+
+	cout << "Data3 number : " << data3.number << endl;
+	cout << "Data4 number : " << data4.number << endl;
 
 	return 0;
 }
