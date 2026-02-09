@@ -70,6 +70,29 @@ private:
 	string value_;
 };
 
+// ====== 클래스 default 생성자(default) ======
+class Class1
+{
+public :
+	Class1() = default; // 클래스 내부 변수를 모두 초기화
+
+public :
+	int number;
+	double prime;
+	string word;
+};
+
+class Class2
+{
+public :
+	Class2() {};
+
+public :
+	int number;
+	double prime;
+	string word;
+};
+
 // =======================================================================================================
 
 int main()
@@ -95,5 +118,14 @@ int main()
 	cout << king_info3_1.GetValue() << endl;
 	cout << king_info3_2.GetValue() << endl;
 	cout << king_info3_3.GetValue() << endl;
+
+	// ====== 클래스 default 생성자(default) ======
+	cout << endl << "======클래스 default 생성자(default)======" << endl;
+	Class1* class1 = new Class1();
+	cout << "Class1 : " << class1->number << ", " << class1->prime << ", " << class1->word << endl;
+
+	Class2* class2 = new Class2();
+	cout << "Class2 : " << class2->number << ", " << class2->prime << ", " << class2->word << endl;
+
 	return 0;
 }
