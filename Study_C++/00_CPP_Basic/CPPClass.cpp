@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-// ====== 클래스 정의하기 ======
+// ====== 1. 클래스 정의하기 ======
 
 class KingInfo
 {
@@ -21,7 +21,7 @@ private:
 	string name_;
 };
 
-// ====== 클래스 생성자 정의하기 ======
+// ====== 2. 클래스 생성자 정의하기 ======
 class KingInfo2
 {
 public:
@@ -40,7 +40,7 @@ private :
 	string name_;
 };
 
-// ====== 클래스 복수 생성자 정의하기 ======
+// ====== 3. 클래스 복수 생성자 정의하기 ======
 class KingInfo3
 {
 public:
@@ -70,7 +70,7 @@ private:
 	string value_;
 };
 
-// ====== 클래스 default 생성자(default) ======
+// ====== 4. 클래스 default 생성자(default) ======
 class Class1
 {
 public :
@@ -93,7 +93,7 @@ public :
 	string word;
 };
 
-// ====== 클래스 생성자 초기화 리스트 ======
+// ====== 5. 클래스 생성자 초기화 리스트 ======
 class TmpClass
 {
 public :
@@ -114,7 +114,7 @@ private :
 	string name = "조다 : 장수왕 아들";
 };
 
-// ====== 클래스 소멸자 정의하기(~) ======
+// ====== 6. 클래스 소멸자 정의하기(~) ======
 class TempClass
 {
 public :
@@ -129,23 +129,51 @@ public :
 	}
 };
 
+// ====== 7. 동적 메모리 할당(new, delete) ======
+class Info
+{
+public:
+	Info()
+	{
+		data = new int;
+		data_arr = new int[3];
+	}
+	~Info()
+	{
+		cout << "소멸자 실행";
+		delete data;
+		delete[] data_arr;
+	}
+
+	void Dispose()
+	{
+		cout << "Dispose() 함수 실행";
+		delete data;
+		delete[] data_arr;
+	}
+
+private:
+	int* data;
+	int* data_arr;
+};
+
 // =======================================================================================================
 
 int main()
 {
-	// ====== 클래스 정의하기 ======
+	// ====== 1. 클래스 정의하기 ======
 	cout << endl << "======클래스 정의하기======" << endl;
 	KingInfo king_info;
 	king_info.SetName("조선 세조 이유");
 
 	cout << king_info.GetName() << endl;
 
-	// ====== 클래스 생성자 정의하기 ======
+	// ====== 2. 클래스 생성자 정의하기 ======
 	cout << endl << "======클래스 생성자 정의하기======" << endl;
 	KingInfo2 king_info2;
 	cout << king_info.GetName() << endl;
 
-	// ====== 클래스 복수 생성자 정의하기 ======
+	// ====== 3. 클래스 복수 생성자 정의하기 ======
 	cout << endl << "======클래스 복수 생성자 정의하기======" << endl;
 	KingInfo3 king_info3_1;
 	KingInfo3 king_info3_2("조선 연산군 이융");
@@ -155,7 +183,7 @@ int main()
 	cout << king_info3_2.GetValue() << endl;
 	cout << king_info3_3.GetValue() << endl;
 
-	// ====== 클래스 default 생성자(default) ======
+	// ====== 4. 클래스 default 생성자(default) ======
 	cout << endl << "======클래스 default 생성자(default)======" << endl;
 	Class1* class1 = new Class1();
 	cout << "Class1 : " << class1->number << ", " << class1->prime << ", " << class1->word << endl;
@@ -163,17 +191,23 @@ int main()
 	Class2* class2 = new Class2();
 	cout << "Class2 : " << class2->number << ", " << class2->prime << ", " << class2->word << endl;
 
-	// ====== 클래스 생성자 초기화 리스트 ======
+	// ====== 5. 클래스 생성자 초기화 리스트 ======
 	cout << endl << "======클래스 생성자 초기화 리스트======" << endl;
 	TmpClass tc;
 	tc.Print();
-
-	// ====== 클래스 소멸자 정의하기(~) ======
+	
+	// ====== 6. 클래스 소멸자 정의하기(~) ======
 	cout << endl << "======클래스 소멸자 정의하기(~)======" << endl;
 	TempClass* temp_class = new TempClass();
 
 	delete temp_class;
 	temp_class = nullptr;
+
+	// ====== 7. 동적 메모리 할당(new, delete) ======
+	cout << endl << "======동적 메모리 할당(new, delete)======" << endl;
+	Info* info = new Info();
+	info->Dispose();
+	//delete info; // 오류 발생 -> 이미 삭제한 데이터이기 때문
 
 	return 0;
 }
