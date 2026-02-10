@@ -225,6 +225,43 @@ private:
 	int ascend_;
 };
 
+// ====== 11. 객체지향 상속 이해하기 ======
+class Info2
+{
+public:
+	Info2() {};
+
+public:
+	string name_;
+	int year_;
+};
+
+class GoodKing : public Info2
+{
+public:
+	GoodKing(const string country) : country_(country) {};
+	void Display()
+	{
+		cout << country_ << " " << name_ << " 즉위 연도 BC : " << year_ << endl;
+	}
+
+private:
+	string country_;
+};
+
+class BadKing : public Info2
+{
+public:
+	BadKing(const string country) : country_(country) {};
+	void Display()
+	{
+		cout << country_ << " " << name_ << " 즉위 연도 : " << year_ << endl;
+	}
+
+private:
+	string country_;
+};
+
 // =======================================================================================================
 
 int main()
@@ -303,6 +340,18 @@ int main()
 
 	cout << king_info5.GetNameSon() << endl;
 	cout << king_info5.GetNameAscend() << endl;
-		
+
+	// ====== 11. 객체지향 상속 이해하기 ======
+	cout << endl << "======객체지향 상속 이해하기======" << endl;
+	GoodKing king1("고조선");
+	king1.name_ = "단군왕검";
+	king1.year_ = 2333;
+
+	BadKing king2("고려");
+	king2.name_ = "충혜왕";
+	king2.year_ = 1330;
+
+	king1.Display();
+	king2.Display();
 	return 0; 
 }
