@@ -147,7 +147,7 @@ public:
 
 	void Dispose()
 	{
-		cout << "Dispose() 함수 실행";
+		cout << "Dispose() 함수 실행" << endl;
 		delete data;
 		delete[] data_arr;
 	}
@@ -156,6 +156,16 @@ private:
 	int* data;
 	int* data_arr;
 };
+
+// ====== 8. static 클래스 이해하기(static) ======
+static class Calculator
+{
+public:
+	int Plus(const int x, const int y) const
+	{
+		return x + y;
+	}
+} calc;
 
 // =======================================================================================================
 
@@ -209,5 +219,10 @@ int main()
 	info->Dispose();
 	//delete info; // 오류 발생 -> 이미 삭제한 데이터이기 때문
 
-	return 0;
+	// ====== 8. static 클래스 이해하기(static) ======
+	cout << endl << "======static 클래스 이해하기(static)======" << endl;
+	cout << "1 + 2 = " << calc.Plus(1, 2) << endl;
+	Calculator cal;
+	cout << "3 + 4 = " << cal.Plus(3, 4) << endl;
+	return 0; 
 }
