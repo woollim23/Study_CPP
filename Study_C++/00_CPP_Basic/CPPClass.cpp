@@ -195,6 +195,36 @@ private:
 	int number_;
 };
 
+// ====== 10. ∞¥√º¡ˆ«‚ ƒ∏Ω∂»≠ ¿Ã«ÿ«œ±‚ ======
+class KingInfo5
+{
+public:
+	KingInfo5() {};
+
+public:
+	void SetValue(const string name, const string son, int ascend)
+	{
+		name_ = name;
+		son_ = son;
+		ascend_ = ascend;
+	}
+
+	string GetNameSon() const
+	{
+		return name_ + "¿« æ∆µÈ" + son_;
+	}
+
+	string GetNameAscend() const
+	{
+		return name_ + "¡Ô¿ß ø¨µµ " + to_string(ascend_) + "≥‚";
+	}
+
+private:
+	string  name_;
+	string son_;
+	int ascend_;
+};
+
 // =======================================================================================================
 
 int main()
@@ -266,5 +296,13 @@ int main()
 	cout << king_info4_1.GetValue() << endl;
 	cout << king_info4_2.GetValue() << endl;
 
+	// ====== 10. ∞¥√º¡ˆ«‚ ƒ∏Ω∂»≠ ¿Ã«ÿ«œ±‚ ======
+	cout << endl << "======∞¥√º¡ˆ«‚ ƒ∏Ω∂»≠ ¿Ã«ÿ«œ±‚======" << endl;
+	KingInfo5 king_info5;
+	king_info5.SetValue("º±¡∂", "±§«ÿ±∫", 1567);
+
+	cout << king_info5.GetNameSon() << endl;
+	cout << king_info5.GetNameAscend() << endl;
+		
 	return 0; 
 }
