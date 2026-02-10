@@ -167,6 +167,34 @@ public:
 	}
 } calc;
 
+// ====== 9. 객체지향 정보은닉 이해하기 ======
+class KingInfo4
+{
+public:
+	KingInfo4() {};
+
+public:
+	void SetValue(const string value)
+	{
+		if (value.empty() == false)
+			value_ = value;
+		else
+			cout << "잘못된 인자!" << endl;
+	}
+
+	string GetValue() const
+	{
+		if (value_.empty() == false)
+			return value_;
+		else
+			return "설정을 먼저 해주세요.";
+	}
+
+private:
+	string value_;
+	int number_;
+};
+
 // =======================================================================================================
 
 int main()
@@ -224,5 +252,19 @@ int main()
 	cout << "1 + 2 = " << calc.Plus(1, 2) << endl;
 	Calculator cal;
 	cout << "3 + 4 = " << cal.Plus(3, 4) << endl;
+
+	// ====== 9. 객체지향 정보은닉 이해하기 ======
+	cout << endl << "======객체지향 정보은닉 이해하기======" << endl;
+	KingInfo4 king_info4_1;
+	king_info4_1.SetValue("조선 중종 이역");
+
+	KingInfo4 king_info4_2;
+	king_info4_2.SetValue("조선 인종 이호");
+
+	//king_info4_1.value_ = "조선 명종 이환"; // 에러
+
+	cout << king_info4_1.GetValue() << endl;
+	cout << king_info4_2.GetValue() << endl;
+
 	return 0; 
 }
