@@ -310,6 +310,29 @@ public:
 	bool is_landload;
 };
 
+// ====== 14. 클래스 상속 Not-A 관계 ======
+class Landload2
+{
+public:
+	void IamLandload2() { cout << "건물주 입니다."; }
+};
+
+class MaleMonkey
+{
+public:
+	void Favorite() { cout << "Favorite : Female Monkey" << endl; }
+};
+
+class Nation2 : public Landload2
+{
+public :
+	void Who()
+	{
+		cout << "안녕하세요. ";
+		IamLandload2();
+	}
+};
+
 // =======================================================================================================
 
 int main()
@@ -408,11 +431,15 @@ int main()
 	envious.MyBuilding();
 
 	// ====== 13. 클래스 상속 Is-A 관계 ======
-	cout << endl << "======클래스 상속 Has-A 관계======" << endl;
+	cout << endl << "======클래스 상속 Is-A 관계======" << endl;
 	Nation nation;
 	nation.is_landload = true;
 	nation.Who();
 
+	// ====== 14. 클래스 상속 Not-A 관계 ======
+	cout << endl << "======클래스 상속 Not-A 관계======" << endl;
+	Nation2 nation2;
+	nation2.Who();
 
 	return 0; 
 }
