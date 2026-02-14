@@ -262,6 +262,23 @@ private:
 	string country_;
 };
 
+// ====== 12. 클래스 상속 Has-A 관계 ======
+class Building1
+{
+public:
+	void Name() { cout << "노른자 위 좋은 건물" << endl; }
+};
+
+class BuildingOwner : public Building1
+{
+public:
+	void MyBuilding()
+	{
+		cout << "내 보물 : ";
+		Name();
+	}
+};
+
 // =======================================================================================================
 
 int main()
@@ -353,5 +370,11 @@ int main()
 
 	king1.Display();
 	king2.Display();
+
+	// ====== 12. 클래스 상속 Has-A 관계 ======
+	cout << endl << "======클래스 상속 Has-A 관계======" << endl;
+	BuildingOwner envious;
+	envious.MyBuilding();
+
 	return 0; 
 }
