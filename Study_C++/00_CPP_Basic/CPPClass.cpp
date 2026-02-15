@@ -333,6 +333,43 @@ public :
 	}
 };
 
+// ====== 15. friend 클래스 사용하기(friend) ======
+class GoodKing2;
+class BadKing2;
+
+class KingInfo6
+{
+	friend class GoodKing2;
+
+public:
+	KingInfo6() {};
+
+private:
+	string achieve;
+};
+
+class GoodKing2 : KingInfo6
+{
+public:
+	GoodKing2() { achieve = "백제 중훙 군주 근초고왕"; };
+	void Display()
+	{
+		cout << achieve << endl;
+	}
+
+};
+
+class BadKing2 : public KingInfo6
+{
+public:
+	BadKing2() { };
+	void Display()
+	{
+		//cout << achieve << endl;
+	}
+
+};
+
 // =======================================================================================================
 
 int main()
@@ -440,6 +477,14 @@ int main()
 	cout << endl << "======클래스 상속 Not-A 관계======" << endl;
 	Nation2 nation2;
 	nation2.Who();
+
+	// ====== 15. friend 클래스 사용하기(friend) ======
+	cout << endl << "======friend 클래스 사용하기(friend)======" << endl;
+	GoodKing2 good_King;
+	good_King.Display();
+
+	BadKing2 bad_King;
+	bad_King.Display();
 
 	return 0; 
 }
