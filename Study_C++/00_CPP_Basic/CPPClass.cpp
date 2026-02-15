@@ -370,6 +370,20 @@ public:
 
 };
 
+// ====== 16. friend 함수 사용하기 ======
+class Ondal {
+public:
+	friend void GetYear(Ondal ondal)
+	{
+		cout << "아단성 전투 연도 : " << ondal.year_ << endl;
+	}
+
+	void SetYear(int year) { year_ = year; }
+
+private:
+	int year_;
+};
+
 // =======================================================================================================
 
 int main()
@@ -485,6 +499,13 @@ int main()
 
 	BadKing2 bad_King;
 	bad_King.Display();
+
+	// ====== 16. friend 함수 사용하기 ======
+	cout << endl << "======friend 함수 사용하기======" << endl;
+	Ondal ondal;
+	ondal.SetYear(590);
+
+	GetYear(ondal);
 
 	return 0; 
 }
