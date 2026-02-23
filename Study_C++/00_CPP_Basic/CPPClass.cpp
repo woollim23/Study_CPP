@@ -395,6 +395,14 @@ double Plus(double arg1, double arg2, double arg3)
 	return arg1 + arg2 + arg3;
 }
 
+// ====== 18. 디폴트 매개변수 이해하기 ======
+int GetOne() { return 1; }
+
+int Plus2(int x, int y = GetOne(), int z = 1)
+{
+	return x + y + z;
+}
+
 // =======================================================================================================
 
 int main()
@@ -525,6 +533,14 @@ int main()
 
 	cout << "number1 : " << number17_1 << endl;
 	cout << "number2 : " << number17_2 << endl;
+
+	// ====== 18. 디폴트 매개변수 이해하기 ======
+	cout << endl << "======디폴트 매개변수 이해하기======" << endl;
+	int number18_1 = Plus2(1);
+	int number18_2 = Plus2(1, 2);
+	int number18_3 = Plus2(1, 2, 3);
+
+	cout << "결과값 : " << number18_1 << ", " << number18_2 << ", " << number18_3 << endl;
 
 	return 0; 
 }
