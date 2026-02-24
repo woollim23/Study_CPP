@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <string>
 #include <map>
 using namespace std;
@@ -433,6 +434,25 @@ T Plus_22(T x, T y, T z = 1)
 	return x + y + z;
 }
 
+// ====== 23. 클래스 템플릿 사용하기 ======
+template <class T>
+class TemplateData_23
+{
+public:
+	void Add(T arg) { data_.push_back(arg); }
+	int Size() { data_.size(); }
+	void Print()
+	{
+		for (int i = 0, size = data_.size(); i < size; i++)
+		{
+			cout << "data_ : " << data_.at(i) << endl;
+		}
+	}
+
+private:
+	vector<T> data_;
+};
+
 // =======================================================================================================
 
 int main()
@@ -636,5 +656,13 @@ int main()
 	double number22_4 = Plus_22(1.1, 2.2, 3.3);
 
 	cout << "결과값 : " << number22_1 << ", " << number22_2 << ", " << number22_3 << ", " << number22_4 << endl;
+
+	// ====== 23. 클래스 템플릿 사용하기 ======
+	cout << endl << "======클래스 템플릿 사용하기======" << endl;
+	TemplateData_23<int> data_int_23;
+	data_int_23.Add(1);
+	data_int_23.Add(2);
+	data_int_23.Print();
+
 	return 0; 
 }
