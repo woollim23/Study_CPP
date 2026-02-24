@@ -403,6 +403,10 @@ int Plus2(int x, int y = GetOne(), int z = 1)
 	return x + y + z;
 }
 
+// ====== 19. type_tratis 사용하기1 (정수, enum, signed) ======
+enum TmpEnum {};
+enum class TmpEnumClass : int {};
+
 // =======================================================================================================
 
 int main()
@@ -541,6 +545,34 @@ int main()
 	int number18_3 = Plus2(1, 2, 3);
 
 	cout << "결과값 : " << number18_1 << ", " << number18_2 << ", " << number18_3 << endl;
+
+	// ====== 19. type_tratis 사용하기1 (정수, enum, signed) ======
+	cout << endl << "======type_tratis 사용하기1 (정수, enum, signed)======" << endl;
+	
+	cout << boolalpha; // bool 타입 값을 문자열로 표기함 (true, false)
+	
+	cout << "== is_integral ==" << endl;
+	cout << is_integral<TmpEnum>::value << ", ";
+	cout << is_integral<TmpEnumClass>::value << ", ";
+	cout << is_integral<signed int>::value << ", ";
+	cout << is_integral<unsigned int>::value << ", ";
+	cout << is_integral<double>::value << ", ";
+	cout << is_integral<bool>::value << endl;
+
+	cout << "== is_enum ==" << endl;
+	cout << is_enum<TmpEnum>::value << ", ";
+	cout << is_enum<TmpEnumClass>::value << ", ";
+	cout << is_enum<int>::value << endl;
+
+	cout << "== is_signed ==" << endl;
+	cout << is_signed<TmpEnum>::value << ", ";
+	cout << is_signed<signed int>::value << ", ";
+	cout << is_signed<unsigned int>::value << endl;
+
+	cout << "== is_unsigned ==" << endl;
+	cout << is_unsigned<TmpEnumClass>::value << ", ";
+	cout << is_unsigned<int>::value << ", ";
+	cout << is_unsigned<unsigned int>::value << endl;
 
 	return 0; 
 }
