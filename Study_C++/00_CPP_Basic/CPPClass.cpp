@@ -426,6 +426,13 @@ string TmpFunc_21(T1 x, T2 y)
 	return typeid(type1).name();
 }
 
+// ====== 22. 함수 템플릿 사용하기 ======
+template <typename T>
+T Plus_22(T x, T y, T z = 1)
+{
+	return x + y + z;
+}
+
 // =======================================================================================================
 
 int main()
@@ -620,5 +627,14 @@ int main()
 	else
 		cout << "double 자료형이 아닙니다." << endl;
 
+	// ====== 22. 함수 템플릿 사용하기 ======
+	cout << endl << "======함수 템플릿 사용하기======" << endl;
+
+	int number22_1 = Plus_22(1, 2);
+	int number22_2 = Plus_22(1, 2, 3);
+	double number22_3 = Plus_22(1.1, 2.2);
+	double number22_4 = Plus_22(1.1, 2.2, 3.3);
+
+	cout << "결과값 : " << number22_1 << ", " << number22_2 << ", " << number22_3 << ", " << number22_4 << endl;
 	return 0; 
 }
