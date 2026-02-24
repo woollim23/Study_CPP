@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <map>
 using namespace std;
 
 // ====== 1. 클래스 정의하기 ======
@@ -407,6 +408,15 @@ int Plus2(int x, int y = GetOne(), int z = 1)
 enum TmpEnum {};
 enum class TmpEnumClass : int {};
 
+// ====== 20. type_tratis 사용하기2 (empty, array, same) ======
+struct TmpStruct_20 {
+	int x = 0;
+};
+
+struct TmpClass_20 {
+
+};
+
 // =======================================================================================================
 
 int main()
@@ -548,7 +558,6 @@ int main()
 
 	// ====== 19. type_tratis 사용하기1 (정수, enum, signed) ======
 	cout << endl << "======type_tratis 사용하기1 (정수, enum, signed)======" << endl;
-	
 	cout << boolalpha; // bool 타입 값을 문자열로 표기함 (true, false)
 	
 	cout << "== is_integral ==" << endl;
@@ -573,6 +582,25 @@ int main()
 	cout << is_unsigned<TmpEnumClass>::value << ", ";
 	cout << is_unsigned<int>::value << ", ";
 	cout << is_unsigned<unsigned int>::value << endl;
+
+	// ====== 20. type_tratis 사용하기2 (empty, array, same) ======
+	cout << endl << "======type_tratis 사용하기2 (empty, array, same)======" << endl;
+	cout << boolalpha;
+
+	cout << "== is_empty ==" << endl;
+	cout << is_empty<TmpStruct_20>::value << ", ";
+	cout << is_empty<TmpClass_20>::value << endl;
+
+	cout << "== is_array ==" << endl;
+	cout << is_array<TmpStruct_20>::value << ", ";
+	cout << is_array<map<int, double>>::value << ", ";
+	cout << is_array<int[3]>::value << endl;
+
+	cout << "== is_same ==" << endl;
+	cout << is_same<TmpStruct_20, TmpClass_20>::value << ", ";
+	cout << is_same<int, signed int>::value << ", ";
+	cout << is_same<int, bool>::value << ", ";
+	cout << is_same<char, unsigned char>::value << endl;
 
 	return 0; 
 }
