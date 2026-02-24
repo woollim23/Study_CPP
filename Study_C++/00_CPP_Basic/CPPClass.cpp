@@ -417,6 +417,15 @@ struct TmpClass_20 {
 
 };
 
+// ====== 21. type_tratis 사용하기3 (conditional) ======
+template <typename T1, typename T2>
+string TmpFunc_21(T1 x, T2 y)
+{
+	typename conditional<is_same<T1, T2>::value, int, double>::type type1;
+
+	return typeid(type1).name();
+}
+
 // =======================================================================================================
 
 int main()
@@ -601,6 +610,15 @@ int main()
 	cout << is_same<int, signed int>::value << ", ";
 	cout << is_same<int, bool>::value << ", ";
 	cout << is_same<char, unsigned char>::value << endl;
+
+	// ====== 21. type_tratis 사용하기3 (conditional) ======
+	cout << endl << "======type_tratis 사용하기3 (conditional)======" << endl;
+	string type21 = TmpFunc_21(1, 22.3);
+
+	if (type21 == "double")
+		cout << "double 자료형입니다." << endl;
+	else
+		cout << "double 자료형이 아닙니다." << endl;
 
 	return 0; 
 }
