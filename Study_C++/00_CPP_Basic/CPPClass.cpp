@@ -664,5 +664,8 @@ int main()
 	data_int_23.Add(2);
 	data_int_23.Print();
 
+	// ====== 24. 가변인자 템플릿 사용하기 ======
+	cout << endl << "======클래스 템플릿 사용하기======" << endl;
+
 	return 0; 
 }
