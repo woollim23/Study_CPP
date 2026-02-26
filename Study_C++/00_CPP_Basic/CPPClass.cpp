@@ -453,6 +453,25 @@ private:
 	vector<T> data_;
 };
 
+// ====== 24. 가변인자 템플릿 사용하기 ======
+void Type1_24(string msg, int no, double value)
+{
+	cout << msg << ", 에러 번호 " << no << ", 오류값 " << value << endl;
+}
+
+void Type2_24(int no, double value)
+{
+	cout << no << ", 오류값 " << value << endl;
+}
+
+template<typename... T>
+void PrintLog_24(T... arg0)
+{
+	// 추가작업
+	Type1_24(arg0...);
+	//Type2_24(arg0...);
+}
+
 // =======================================================================================================
 
 int main()
@@ -666,6 +685,12 @@ int main()
 
 	// ====== 24. 가변인자 템플릿 사용하기 ======
 	cout << endl << "======클래스 템플릿 사용하기======" << endl;
+	PrintLog_24<string, int, double>("Warning", 100, 22.5);
+	//PrintLog_24<int, double>(101, 55.6);
+
+	// ====== 25. 가변인자 템플릿 사용하기 ======
+	cout << endl << "======클래스 템플릿 사용하기======" << endl;
+
 
 	return 0; 
 }
