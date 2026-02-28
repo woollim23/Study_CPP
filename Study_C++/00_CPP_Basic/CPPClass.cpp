@@ -699,5 +699,19 @@ int main()
 	for (int i = 0; i < 5; i++)
 		cout << Max25(i, i + 10) << endl;
 
+	// ====== 26. 예외 처리 이해하기 ======
+	cout << endl << "======예외 처리 이해하기======" << endl;
+	vector<int> data_26;
+	int number_26 = 0;
+
+	try
+	{
+		number_26 = data_26.at(10);
+	}
+	catch (exception e)
+	{
+		cout << e.what() << endl;
+	}
+
 	return 0; 
 }
