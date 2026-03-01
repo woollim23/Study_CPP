@@ -713,5 +713,26 @@ int main()
 		cout << e.what() << endl;
 	}
 
+	// ====== 27. 예외 처리 응용하기 ======
+	cout << endl << "======예외 처리 응용하기======" << endl;
+	vector<int> data_27;
+	data_27.push_back(1);
+
+	try
+	{
+		if (data_27.empty() == true)
+			throw "백터가 비어 있습니다.";
+		if (data_27.size() < 2)
+			throw 99;
+	}
+	catch (char* e)
+	{
+		cout << "catch (char* e) " << e << endl;
+	}
+	catch (int e)
+	{
+		cout << "catch (int e) " << e << endl;
+	}
+
 	return 0; 
 }
