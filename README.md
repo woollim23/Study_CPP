@@ -2,6 +2,7 @@
 
 ## ■ **Study_C++**
 ### ○ 개발도구 : Visual Studio
+- 00_CPP_Syntax : C++ 문법
 - 01_BAEKJOON : 백준 풀이
 - 02_Variable_Length_Arrays : 가변배열
 - 03_Linked_List : 리스트
